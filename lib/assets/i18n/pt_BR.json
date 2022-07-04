@@ -1,8 +1,14 @@
 {
 	"email":"E-mail",
 	"password":"Senha",
-	"login-button":"Login",
+	"login-button":"Entrar",
 	"home-page":"Página Principal",
 	"hint-email":"Digite seu e-mail",
-	"hint-password":"Digite sua senha"
+	"hint-password":"Digite sua senha",
+	"signup-button":"Cadastrar",
+	"reset-password":"Redefinir senha",
+	"or":"ou",
+	"signup-hint":"Preencha seus dados",
+	"hint-confirm-password":"Confirme sua senha",
+	"login-hint":"Login"
 }

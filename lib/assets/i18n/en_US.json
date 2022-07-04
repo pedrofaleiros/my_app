@@ -4,5 +4,11 @@
 	"login-button":"Login",
 	"home-page":"Home Page",
 	"hint-email":"Enter your e-mail",
-	"hint-password":"Enter your password"
+	"hint-password":"Enter your password",
+	"signup-button":"Signup",
+	"reset-password":"Reset password",
+	"or":"or",
+	"signup-hint":"Enter your data",
+	"hint-confirm-password":"Confirm your password",
+	"login-hint":"Login"
 }
