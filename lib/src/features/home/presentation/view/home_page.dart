@@ -27,11 +27,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        controller.fetchAllPersons();
-        setState(() {});
-      }),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.search),
+          onPressed: () {
+            controller.fetchAllPersons();
+          }),
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              //TODO: tela chatbot
+            },
+            icon: Icon(Icons.message),
+          ),
+        ],
         title: Text('home-page'.i18n()),
         leading: IconButton(
           onPressed: () {
@@ -48,13 +57,54 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               final person = controller.persons[index];
               return ListTile(
-                title: Container(
-                  child: Text(person.racaCor),
-                ),
+                title: Person(person.id, person.racaCor, person.idade),
               );
             },
           );
         },
+      ),
+    );
+  }
+
+  Widget Person(String name, String distance, int ratting) {
+    return Container(
+      height: 90,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          name,
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Text(distance),
+                  ],
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  //TODO: ir para tela com infos da pessoa
+                },
+                icon: Icon(Icons.person),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
